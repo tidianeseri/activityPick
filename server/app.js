@@ -4,9 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
+var passport = require('passport');
+var session = require('express-session');
 
 var app = express();
 
@@ -21,6 +20,16 @@ app.use(cookieParser());
  * Development Settings
  */
 if (app.get('env') === 'development') {
+    app.use(session({
+        secret: 'super secret session',
+        saveUninitialized: true,
+        resave: true,
+        // using store session on MongoDB using express-session + connect
+        /*store: new MongoStore({
+            url: config.urlMongo,
+            collection: 'sessions'
+        })*/
+    }));
     // This will change in production since we'll be using the dist folder
     app.use(express.static(path.join(__dirname, '../client')));
     // This covers serving up the index page
@@ -55,6 +64,23 @@ if (app.get('env') === 'production') {
         });
     });
 }
+
+/**
+ * Passport
+ */
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//// Initialize Passport
+var initPassport = require('./config/passport-init');
+initPassport(passport);
+
+/**
+ * Routes
+ */
+require('./config/router')(app);
+
 
 /*
 // catch 404 and forward to error handler

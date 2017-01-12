@@ -1,0 +1,14 @@
+<h4 class="text-center">Description</h4>
+<h5>by {{activity.created_by}}
+<div class="jumbotron">
+    <p>
+        {{activity.description}}
+    </p>
+    <hr>
+    <p>
+        Previously picked:<br/>
+        <ul>
+            <span ng-repeat="dates in activity.pickDates">{{ dates | date :'medium' }}</span>
+        </ul>
+    </p>
+</div>

@@ -1,0 +1,35 @@
+<div class="add_activity-container">
+    <div class="col-md-12">
+        <h3 class="signup-header center">Would you like to do {{activity.title}} ?</h3>
+        <hr>
+        <br>
+    </div>
+    <div class="clearfix"></div>
+    <div class="add_activity-form">
+        <h4 class="text-center">Description</h4>
+        <h5 class="text-center">by {{activity.created_by.firstname}}
+        <div class="jumbotron">
+            <p>
+                {{activity.description}}
+            </p>
+            <hr>
+            <p>
+                Previously picked:<br/>
+                <ul>
+                    <div ng-repeat="dates in activity.pickDates">{{ dates | date :'medium' }}</div>
+                </ul>
+            </p>
+        </div>
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="signup"></label>
+            <div class="col-md-5">
+                <a ng-click="acceptActivity()" class="btn btn-success btn-block">OK, let's do this</a>
+                <a ui-sref="pickActivity" ui-sref-opts="{reload: true, notify: true}" class="btn btn-danger btn-block">Nope, another one</a>
+            </div>
+        </div>
+        <br>
+
+    </div>
+
+</div>

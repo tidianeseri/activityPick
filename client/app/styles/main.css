@@ -19,7 +19,7 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  /*border-bottom: 1px solid #e5e5e5;*/
   margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */
@@ -49,6 +49,11 @@ body {
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
+}
+
+.jumbotron .btn-lg {
+  width: 100%;
+  margin: 5px 0;
 }
 
 /* Supporting marketing content */

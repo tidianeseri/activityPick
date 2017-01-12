@@ -1,0 +1,35 @@
+<div class="signup-container">
+
+    <div class="signup-form">
+        
+        <form class="form-horizontal" ng-submit="auth.signin(auth.user1)">
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="signup"></label>
+            <div class="col-md-5">
+                <input type="hidden"  ng-init="auth.user1.email='tidileboss@yahoo.fr'"  />
+                <input type="hidden"  ng-init="auth.user1.password='test'"  />
+                <input type="submit" value="Tidiane" class="btn btn-success btn-block" />
+            </div>
+        </div>
+
+        </form>
+
+        <form class="form-horizontal" ng-submit="auth.signin(auth.user2)">
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="signup"></label>
+            <div class="col-md-5">
+                <input type="hidden"  ng-init="auth.user2.email='sp.octave@gmail.com'"  />
+                <input type="hidden"  ng-init="auth.user2.password='test'"  />
+                <input type="submit" value="Shirline" class="btn btn-success btn-block" />
+            </div>
+        </div>
+
+        </form>
+
+    </div>
+
+</div>

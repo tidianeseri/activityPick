@@ -1,0 +1,34 @@
+<div class="add_activity-container">
+    <div class="col-md-12">
+        <h3 class="signup-header text-center">Details for {{activity.title}}</h3>
+        <h5 class="text-center">by {{activity.created_by.firstname}}
+        <hr>
+        <br>
+    </div>
+    <div class="clearfix"></div>
+    <div class="add_activity-form">
+        <h4 class="text-center">Description</h4>
+        <div class="jumbotron">
+            <p>
+            {{activity.description}}
+            </p>
+            <hr>
+            <p>
+                Previously picked:<br/>
+                <ul>
+                    <div ng-repeat="dates in activity.pickDates">{{ dates | date :'medium' }}</div>
+                </ul>
+            </p>
+        </div>
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="signup"></label>
+            <div class="col-md-5">
+                <a ui-sref="editActivity({id:activity._id})" class="btn btn-success btn-block" >Edit</a>
+            </div>
+        </div>
+        <br>
+
+    </div>
+
+</div>

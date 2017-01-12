@@ -1,0 +1,42 @@
+<div class="signup-container">
+    <div class="col-md-12">
+        <h3 class="signup-header">Login</h3>
+        <hr>
+        <br>
+    </div>
+
+    <div class="signup-form">
+        
+        <form class="form-horizontal" ng-submit="auth.login()">
+
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="firstname">Email</label>  
+            <div class="col-md-5">
+            <input type="email" ng-model="auth.user.email" ng-init="auth.user.email='tidileboss@yahoo.fr'" placeholder="Username" class="form-control input-md">
+                
+            </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="password1">Password</label>
+            <div class="col-md-5">
+                <input id="password1" name="password" ng-model="auth.user.password" type="password" placeholder="" class="form-control input-md">
+                
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="signup"></label>
+            <div class="col-md-5">
+                <input type="submit" value="Login" class="btn btn-success btn-block" />
+            </div>
+        </div>
+
+        </form>
+    </div>
+
+</div>
